@@ -65,7 +65,7 @@ def finish_page():
 
 @app.route("/download-history")
 def download_history():
-    filename = "history.csv"
+    filename = "history.xlsx"
     return send_file(filename, as_attachment=True)
 
     
