@@ -96,7 +96,10 @@ def handle_button():
             # with open("history.csv", 'a', newline="") as file:
             #     writer = csv.writer(file)
             #     writer.writerow([person_name, person_date, person_time])
-
+    def convert_csv_to_excel():
+        filename = "history.csv"
+        pd_filename = pd.read_csv(filename, dtype={1: str})
+        pd_filename.to_excel('history.xlsx', index=False)
     def write_staff_data_to_csv():
         index = None
         start_time = '16:30'
@@ -107,12 +110,8 @@ def handle_button():
         with open("history.csv", 'a',encoding="utf-8", newline="") as file:
             writer = csv.writer(file)
             writer.writerow([staffs_lst_2[index][1], staffs_lst_2[index][2], start_time, person_time, staffs_lst_2[index][3], staffs_lst_2[index][4], person_date])
-    def convert_csv_to_excel():
-        filename = "history.csv"
-        pd_filename = pd.read_csv(filename, dtype={1: str})
-        pd_filename.to_excel('history.xlsx', index=False)
+        convert_csv_to_excel()
     write_staff_data_to_csv()
-    convert_csv_to_excel()
     return 'Data written.'
 
 
