@@ -6,6 +6,8 @@ from datetime import date
 from datetime import datetime
 import pytz
 import pandas as pd
+import openpyxl
+from openpyxl import load_workbook
 
 
 id_lst = ['btn_1', 'btn_2', 'btn_3', 'btn_4', 'btn_5', 'btn_6', 'btn_7', 'btn_8', 'btn_9', 'btn_10', 'btn_11', 'btn_12', 'btn_13', 'btn_14', 'btn_15', 'btn_16', 'btn_17', 'btn_18']
@@ -65,7 +67,7 @@ def finish_page():
 
 @app.route("/download-history")
 def download_history():
-    filename = "history.xlsx"
+    filename = "log.xlsx"
     return send_file(filename, as_attachment=True)
 
 @app.route("/download-history-csv")
@@ -104,8 +106,7 @@ def handle_button():
         filename = "history.csv"
         csv_data = pd.read_csv(filename, dtype={1: str})
         excel_file = csv_data.to_excel('history.xlsx', index=False)
-        excel_file.save()
-        excel_file.close()
+
 
     def write_staff_data_to_csv():
         index = None
@@ -117,7 +118,12 @@ def handle_button():
         with open("history.csv", 'a',encoding="utf-8", newline="") as file:
             writer = csv.writer(file)
             writer.writerow([staffs_lst_2[index][1], staffs_lst_2[index][2], start_time, person_time, staffs_lst_2[index][3], staffs_lst_2[index][4], person_date])
-        convert_csv_to_excel()
+        filename = "history.csv"
+        df = pd.read_csv(filename, dtype={1: str})
+        # print(df)
+        # print(type(df))
+        df.to_excel("log.xlsx", index=False)
+
     write_staff_data_to_csv()
     return 'Data written.'
 
