@@ -102,8 +102,11 @@ def handle_button():
             #     writer.writerow([person_name, person_date, person_time])
     def convert_csv_to_excel():
         filename = "history.csv"
-        pd_filename = pd.read_csv(filename, dtype={1: str})
-        pd_filename.to_excel('history.xlsx', index=False)
+        csv_data = pd.read_csv(filename, dtype={1: str})
+        excel_file = csv_data.to_excel('history.xlsx', index=False)
+        excel_file.save()
+        excel_file.close()
+
     def write_staff_data_to_csv():
         index = None
         start_time = '16:30'
