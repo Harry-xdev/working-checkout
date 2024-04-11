@@ -11,7 +11,8 @@
 		<h3 style="font-size: 20px; color: rgb(209, 88, 108); font-family: monospace;">Hello! Vui lòng</h3>
 		<h3 style="font-size: 20px; color: rgb(209, 88, 108); font-family: monospace;">Chấm công tăng ca!</h3>
 
-		<button id="download"><a id="link" style="text-decoration: none" href="https://working-checkout-8e5c8145a6e5.herokuapp.com/download-history">Download excel report</a></button>
+		<button id="download" onclick="handleDownloadbtn()">Download Excel Report</button>
+
 		<!-- <button><a style="text-decoration: none" href="https://working-checkout-8e5c8145a6e5.herokuapp.com/download-history-csv">Download CSV</a></button> -->
 		<br>
 		<br>
@@ -47,19 +48,21 @@
 	function handClick(buttonId) {
 		let buttonText = this.textContent;
 		const buttonDiv = document.getElementById(buttonId);
-		buttonDiv.style.backgroundColor = '#003039'
-		alert("Check-in(out) successful.");
+		// buttonDiv.style.backgroundColor = '#003039'
+		buttonDiv.style.backgroundColor = 'gray';
+		buttonDiv.disabled = true;
+		// alert("Check-in(out) successful.");
 
 	};
 
 	function sendName(buttonId) {
-		const button = document.getElementById(buttonId)
-		console.log(buttonId)
-		const content = button.innerHTML
+		const button = document.getElementById(buttonId);
+		console.log(buttonId);
+		const content = button.innerHTML;
 		const payload = {
 			buttonId : buttonId,
 			content : content,
-		}
+		};
 		fetch('/button', {
 			method: 'POST',
 			headers: {
@@ -75,12 +78,13 @@
 		});
 		handClick(buttonId);
 	};
-
-	// for (let i=0; i < buttons.length; i++) {
-	// 	buttons[i].addEventListener("click", handClick);
-	// };
-
-
+	function handleDownloadbtn() {
+		window.location.href = "https://working-checkout-8e5c8145a6e5.herokuapp.com/download-history" ;
+		// alert("Excel downloaded.");
+		btn = document.getElementById('download');
+		btn.style.backgroundColor = 'grey';
+		btn.disabled = true;
+	};
 
 
 

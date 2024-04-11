@@ -92,23 +92,6 @@ def handle_button():
     person_date = get_date()
     person_time = get_time()
     
-    for i in id_lst:
-        if button_id == i:
-            print(f'{i} button clicked')
-            print(person_name)
-            print(person_date)
-            print(person_time)
-
-            # desktop_folder = os.path.expanduser("~/Desktop")
-            # file_path = os.path.join(desktop_folder, "history.csv")
-            # with open(file_path, 'a', newline="") as file:
-            #     writer = csv.writer(file)
-            #     writer.writerow([person_name, person_date, person_time])
-            
-            # with open("history.csv", 'a', newline="") as file:
-            #     writer = csv.writer(file)
-            #     writer.writerow([person_name, person_date, person_time])
-
     def write_staff_data_to_csv():
         index = None
         start_time = None
