@@ -68,7 +68,11 @@ def download_history():
     filename = "history.xlsx"
     return send_file(filename, as_attachment=True)
 
-    
+@app.route("/download-history-csv")
+def download_history_csv():
+    filename = "history.csv"
+    return send_file(filename, as_attachment=True)
+
 @app.route("/button-click", methods=["POST"])
 def button_click():
     return "Chấm tăng ca rồi nha."
