@@ -3,36 +3,36 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>New page</title>
-	<!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}"> -->
-	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+	<!-- <link rel="stylesheet" href="styles.css"> -->
 </head>
 <body>
 	<div class="body-container">
-		<h3 style="color: rgb(252, 252, 252); font-family: monospace;">Hello ACE! Chấm công nha!</h3>
-		<h3 style="color: rgb(255, 255, 255); font-family: monospace">Testing 2</h3>
-		<br>
-		<button><a style="text-decoration: none" href="https://working-checkout-8e5c8145a6e5.herokuapp.com/download-history">Download Excel</a></button>
+		<h3 style="font-size: 20px; color: rgb(209, 88, 108); font-family: monospace;">Hello! Vui lòng</h3>
+		<h3 style="font-size: 20px; color: rgb(209, 88, 108); font-family: monospace;">Chấm công tăng ca!</h3>
+
+		<button id="download"><a id="link" style="text-decoration: none" href="https://working-checkout-8e5c8145a6e5.herokuapp.com/download-history">Download excel report</a></button>
 		<!-- <button><a style="text-decoration: none" href="https://working-checkout-8e5c8145a6e5.herokuapp.com/download-history-csv">Download CSV</a></button> -->
 		<br>
 		<br>
-		<button style="width: 250px; height: 50px; font-size: larger; font-family: monospace" id="btn_1" class="btn" onclick="sendName('btn_1')">LÊ PHƯƠNG</button><br>
-		<button style="width: 250px; height: 50px; font-size: larger; font-family: monospace" id="btn_2" class="btn" onclick="sendName('btn_2')">TRƯƠNG TƯ XUÂN</button><br>
-		<button style="width: 250px; height: 50px; font-size: larger; font-family: monospace" id="btn_3" class="btn" onclick="sendName('btn_3')">TRƯƠNG THÀNH TAM</button><br>
-		<button style="width: 250px; height: 50px; font-size: larger; font-family: monospace" id="btn_4" class="btn" onclick="sendName('btn_4')">LÊ THANH TUẤN</button><br>
-		<button style="width: 250px; height: 50px; font-size: larger; font-family: monospace" id="btn_5" class="btn" onclick="sendName('btn_5')">PHẠM THỊ PHƯƠNG</button><br>
-		<button style="width: 250px; height: 50px; font-size: larger; font-family: monospace" id="btn_6" class="btn" onclick="sendName('btn_6')">NGUYỄN HOÀNG VIỆT</button><br>
-		<button style="width: 250px; height: 50px; font-size: larger; font-family: monospace" id="btn_7" class="btn" onclick="sendName('btn_7')">NGUYỄN THỊ HỒNG YẾN</button><br>
-		<button style="width: 250px; height: 50px; font-size: larger; font-family: monospace" id="btn_8" class="btn" onclick="sendName('btn_8')">BÙI HỒNG PHÚC</button><br>
-		<button style="width: 250px; height: 50px; font-size: larger; font-family: monospace" id="btn_9" class="btn" onclick="sendName('btn_9')">TRƯƠNG VĂN MINH</button><br>
-		<button style="width: 250px; height: 50px; font-size: larger; font-family: monospace" id="btn_10" class="btn" onclick="sendName('btn_10')">NGUYỄN QUANG QUÍ</button><br>
-		<button style="width: 250px; height: 50px; font-size: larger; font-family: monospace" id="btn_11" class="btn" onclick="sendName('btn_11')">NGUYỄN THỊ DIỄM MY</button><br>
-		<button style="width: 250px; height: 50px; font-size: larger; font-family: monospace" id="btn_12" class="btn" onclick="sendName('btn_12')">LÊ MINH THẮNG</button><br>
-		<button style="width: 250px; height: 50px; font-size: larger; font-family: monospace" id="btn_13" class="btn" onclick="sendName('btn_13')">LÊ QUỐC TRUNG</button><br>
-		<button style="width: 250px; height: 50px; font-size: larger; font-family: monospace" id="btn_14" class="btn" onclick="sendName('btn_14')">NGUYỄN TUẤN ANH</button><br>
-		<button style="width: 250px; height: 50px; font-size: larger; font-family: monospace" id="btn_15" class="btn" onclick="sendName('btn_15')">TRẦN VĂN LƯU</button><br>
-		<button style="width: 250px; height: 50px; font-size: larger; font-family: monospace" id="btn_16" class="btn" onclick="sendName('btn_16')">LÊ HUỲNH ANH KHOA</button><br>
-		<button style="width: 250px; height: 50px; font-size: larger; font-family: monospace" id="btn_17" class="btn" onclick="sendName('btn_17')">NGUYỄN MAI PHƯƠNG</button><br>
-		<button style="width: 250px; height: 50px; font-size: larger; font-family: monospace" id="btn_18" class="btn" onclick="sendName('btn_18')">NGUYỄN PHẠM NGỌC TUYẾT</button><br>
+		<button id="btn_1" class="btn" onclick="sendName('btn_1')">LÊ PHƯƠNG</button><br>
+		<button id="btn_2" class="btn" onclick="sendName('btn_2')">TRƯƠNG TƯ XUÂN</button><br>
+		<button id="btn_3" class="btn" onclick="sendName('btn_3')">TRƯƠNG THÀNH TAM</button><br>
+		<button id="btn_4" class="btn" onclick="sendName('btn_4')">LÊ THANH TUẤN</button><br>
+		<button id="btn_5" class="btn" onclick="sendName('btn_5')">PHẠM THỊ PHƯƠNG</button><br>
+		<button id="btn_6" class="btn" onclick="sendName('btn_6')">NGUYỄN HOÀNG VIỆT</button><br>
+		<button id="btn_7" class="btn" onclick="sendName('btn_7')">NGUYỄN THỊ HỒNG YẾN</button><br>
+		<button id="btn_8" class="btn" onclick="sendName('btn_8')">BÙI HỒNG PHÚC</button><br>
+		<button id="btn_9" class="btn" onclick="sendName('btn_9')">TRƯƠNG VĂN MINH</button><br>
+		<button id="btn_10" class="btn" onclick="sendName('btn_10')">NGUYỄN QUANG QUÍ</button><br>
+		<button id="btn_11" class="btn" onclick="sendName('btn_11')">NGUYỄN THỊ DIỄM MY</button><br>
+		<button id="btn_12" class="btn" onclick="sendName('btn_12')">LÊ MINH THẮNG</button><br>
+		<button id="btn_13" class="btn" onclick="sendName('btn_13')">LÊ QUỐC TRUNG</button><br>
+		<button id="btn_14" class="btn" onclick="sendName('btn_14')">NGUYỄN TUẤN ANH</button><br>
+		<button id="btn_15" class="btn" onclick="sendName('btn_15')">TRẦN VĂN LƯU</button><br>
+		<button id="btn_16" class="btn" onclick="sendName('btn_16')">LÊ HUỲNH ANH KHOA</button><br>
+		<button id="btn_17" class="btn" onclick="sendName('btn_17')">NGUYỄN MAI PHƯƠNG</button><br>
+		<button id="btn_18" class="btn" onclick="sendName('btn_18')">NGUYỄN PHẠM NGỌC TUYẾT</button><br>
 
 	</div>
 
