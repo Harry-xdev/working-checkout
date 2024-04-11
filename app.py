@@ -6,8 +6,7 @@ from datetime import date
 from datetime import datetime
 import pytz
 import pandas as pd
-import openpyxl
-from openpyxl import load_workbook
+
 
 
 id_lst = ['btn_1', 'btn_2', 'btn_3', 'btn_4', 'btn_5', 'btn_6', 'btn_7', 'btn_8', 'btn_9', 'btn_10', 'btn_11', 'btn_12', 'btn_13', 'btn_14', 'btn_15', 'btn_16', 'btn_17', 'btn_18']
@@ -49,6 +48,13 @@ def get_time():
 
     return curr_time
 
+def get_name_of_weekday():
+	import datetime
+	current_date = datetime.datetime.now()
+	week_day = current_date.weekday()
+	# week_day = 6
+	# week_day_name = datetime.datetime.strftime(current_date, '%A')
+	return week_day
 
 
 app = Flask(__name__,
@@ -102,28 +108,30 @@ def handle_button():
             # with open("history.csv", 'a', newline="") as file:
             #     writer = csv.writer(file)
             #     writer.writerow([person_name, person_date, person_time])
-    def convert_csv_to_excel():
-        filename = "history.csv"
-        csv_data = pd.read_csv(filename, dtype={1: str})
-        excel_file = csv_data.to_excel('history.xlsx', index=False)
-
 
     def write_staff_data_to_csv():
         index = None
-        start_time = '16:30'
+        start_time = None
         for i, staff in enumerate(staffs_lst_2):
             if staff[0] == button_id:
                 index = i
                 break
+
+        weekday = get_name_of_weekday()
+        if weekday == 6:
+            start_time = '7:30'
+        else: start_time = '16:30'
+
         with open("history.csv", 'a',encoding="utf-8", newline="") as file:
             writer = csv.writer(file)
             writer.writerow([staffs_lst_2[index][1], staffs_lst_2[index][2], start_time, person_time, staffs_lst_2[index][3], staffs_lst_2[index][4], person_date])
+
         filename = "history.csv"
         df = pd.read_csv(filename, dtype={1: str})
         # print(df)
         # print(type(df))
         df.to_excel("log.xlsx", index=False)
-
+        
     write_staff_data_to_csv()
     return 'Data written.'
 

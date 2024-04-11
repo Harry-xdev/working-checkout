@@ -1,4 +1,4 @@
-body {
+/* body {
     padding-top: 20px;
     display: flex;
     background-color: #003039;
@@ -8,18 +8,31 @@ body {
     padding: 0;
     justify-content: center;
     align-items: center;
+} */
+
+@media (max-width: 600px) {
+    /* Styles for mobile screens */
+    .body-container {
+        background-color: 'white';
+        width: 100%;
+        margin: 0;
+        padding-top: 50px;
+        justify-content: center;
+        align-items: center;
+    
+    
+    
+    }
 }
 
-
-
-#body-container {
-    /* background-color: rgb(59, 187, 247); */
-    width: 280px;
+.body-container {
+    background-color: #003039;
+    width: 100%;
     margin: 0;
-    padding: 0;
+    padding-top: 50px;
     justify-content: center;
     align-items: center;
 
 
 
-};
+}
