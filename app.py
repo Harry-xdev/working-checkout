@@ -67,6 +67,11 @@ def index():
     return render_template("index.html")
     # return "Hello, World!"
 
+@app.route("/thi-phuong")
+def thi_phuong():
+     return render_template("thi_phuong.html")
+
+
 @app.route("/finished-page")
 def finish_page():
     return "Successful check-in(out)!"

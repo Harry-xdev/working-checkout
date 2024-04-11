@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>New page</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+	<!-- <link rel="stylesheet" href="styles.css"> -->
+</head>
+<body>
+	<div class="body-container">
+		<h3 style="font-size: 20px; color: rgb(209, 88, 108); font-family: monospace;">Hello! Vui lòng</h3>
+		<h3 style="font-size: 20px; color: rgb(209, 88, 108); font-family: monospace;">Chấm công tăng ca!</h3>
+
+		<button id="download" onclick="handleDownloadbtn()">Download Excel Report</button>
+
+		<!-- <button><a style="text-decoration: none" href="https://working-checkout-8e5c8145a6e5.herokuapp.com/download-history-csv">Download CSV</a></button> -->
+		<br>
+		<br>
+		<button id="btn_5" class="btn" onclick="sendName('btn_5')">PHẠM THỊ PHƯƠNG</button><br>
+		
+	</div>
+
+
+
+</body>
+</html>
+
+<script>
+
+	var buttons = document.getElementsByClassName("btn");
+	function handClick(buttonId) {
+		let buttonText = this.textContent;
+		const buttonDiv = document.getElementById(buttonId);
+		// buttonDiv.style.backgroundColor = '#003039'
+		buttonDiv.style.backgroundColor = 'gray';
+		buttonDiv.disabled = true;
+		// alert("Check-in(out) successful.");
+
+	};
+
+	function sendName(buttonId) {
+		const button = document.getElementById(buttonId);
+		console.log(buttonId);
+		const content = button.innerHTML;
+		const payload = {
+			buttonId : buttonId,
+			content : content,
+		};
+		fetch('/button', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify(payload),
+		}).then(response => {
+			if (response.ok) {
+				return response.text();
+			} else {
+				Error('Request failed.')
+			}
+		});
+		handClick(buttonId);
+	};
+	function handleDownloadbtn() {
+		window.location.href = "https://working-checkout-8e5c8145a6e5.herokuapp.com/download-history" ;
+		// alert("Excel downloaded.");
+		btn = document.getElementById('download');
+		btn.style.backgroundColor = 'grey';
+		btn.disabled = true;
+	};
+
+
+
+
+
+
+
+
+
+
+
+</script>
