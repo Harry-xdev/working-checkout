@@ -10,7 +10,7 @@
 	<div class="body-container">
 		<h3 style="font-size: 20px; color: rgb(209, 88, 108); font-family: monospace;">Hello! Tap your name to check out!</h3>
 
-		<div id="log-display">
+		<div class="log-display">
 			<ul id="data-list">
 			</ul>
 		</div>
@@ -35,8 +35,12 @@
 		<button id="btn_16" class="btn" onclick="sendName('btn_16')">LÊ HUỲNH ANH KHOA</button><br>
 		<button id="btn_17" class="btn" onclick="sendName('btn_17')">NGUYỄN MAI PHƯƠNG</button><br>
 		<button id="btn_18" class="btn" onclick="sendName('btn_18')">NGUYỄN PHẠM NGỌC TUYẾT</button><br> -->
-		<button id="btn_6" class="btn" onclick="sendName('btn_6')">NGUYỄN HOÀNG VIỆT</button>
+		
 		<button id="download" onclick="handleDownloadbtn()">Download Excel Report</button>
+		<button id="btn_6" class="btn" onclick="sendName('btn_6')">
+			<p style="color: grey; font-size: 14px;">OT tap here!</p>
+			NGUYỄN HOÀNG VIỆT
+		</button>
 
 	</div>
 
@@ -46,6 +50,8 @@
 </html>
 
 <script>
+	const testLink = 'http://127.0.0.1:5000'
+	const productionLink = 'https://working-checkout-8e5c8145a6e5.herokuapp.com'
 
 	var buttons = document.getElementsByClassName("btn");
 	function handClick(buttonId) {
@@ -91,22 +97,22 @@
 	};
 
 	const dataListElement = document.getElementById('data-list');
-	fetch('http://127.0.0.1:5500/api/data')
+	fetch('http://127.0.0.1:5000/api/data')
       .then(response => response.json())
       .then(data => {
         // Populate the list with data
         data.forEach(item => {
           const liElement = document.createElement('li');
-          liElement.textContent = item.staff_name;
+          liElement.textContent = item.date + ' | ' + '[' + item.start_time + ']' + '-' + '[' + item.leaving_time + ']' + ': ' + item.staff_name;
           dataListElement.appendChild(liElement);
         });
-		// console.log(data)
+		console.log(data)
       })
       .catch(error => {
         console.log('Error:', error);
       });
 
-
+	
 
 
 </script>

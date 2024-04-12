@@ -58,10 +58,11 @@ def get_name_of_weekday():
 	return week_day
 
 def read_csv():
-	data = []
-	df = pd.read_csv('history.csv', encoding='utf-8')
-	data = df.to_dict(orient='records')
-	return data
+    data = []
+    df = pd.read_csv('history.csv', encoding='utf-8')
+    reversed_df = df.iloc[::-1]
+    data = reversed_df.to_dict(orient='records')
+    return data
 
 
 app = Flask(__name__,

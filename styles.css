@@ -18,21 +18,21 @@
         width: 90%;
         height: 120px;
         margin-top: 0px;
-        margin-top: 5px;
+        margin-top: 25px;
         font-size: larger;
         border-radius: 8px;
-        /* background-color: rgb(238, 165, 177); */
+        background-color: rgb(238, 165, 177);
         color: white;
-    
+        border-width: 0px;
     }
     
     #download {
-        height: 35px;
+        height: 45px;
         width: 90%;
         margin-top: 10px;
         /* background-color: transparent; */
         background-color: rgb(238, 196, 89);
-        border: 0px;
+        border-width: 0px;
         border-radius: 8px;
         font-size: 20px;
         color: rgb(84, 85, 84);
@@ -42,16 +42,35 @@
         
     }
     
-    #log-display {
+    .log-display {
         border-width: 2px;
         border-color: black;
         height: 300px;
         width: 90%;
-        background-color: rgb(171, 243, 233);
+        background-color: white;
+        /* background-color: rgb(88, 88, 88); */
         border-radius: 8px;
+        margin-bottom: 5px;
+    }
+    
+    ul {
+        list-style-type: none;
+    }
+    
+    #data-list {
+        font-size: 9px;
+        height: 286px;
+        overflow: auto;
+        font-weight: bold;
+        /* font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+        font-family:'Courier New', Courier, monospace;
+    
     }
 }
 
+/* ----------------------------------------------------------------
+----------------------------------------------------------------
+---------------------------------------------------------------- */
 .body-container {
     display: flex;
     flex-direction: column;
@@ -69,7 +88,7 @@
     width: 90%;
     height: 120px;
     margin-top: 0px;
-    margin-top: 5px;
+    margin-top: 25px;
     font-size: larger;
     border-radius: 8px;
     background-color: rgb(238, 165, 177);
@@ -93,12 +112,13 @@ a#link {
     
 }
 
-#log-display {
+.log-display {
     border-width: 2px;
     border-color: black;
     height: 300px;
     width: 90%;
-    background-color: rgb(171, 243, 233);
+    background-color: white;
+    /* background-color: rgb(88, 88, 88); */
     border-radius: 8px;
     margin-bottom: 5px;
 }
@@ -108,5 +128,11 @@ ul {
 }
 
 #data-list {
-    font-size: 8px;
+    font-size: 9px;
+    height: 286px;
+    overflow: auto;
+    font-weight: bold;
+    /* font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+    font-family:'Courier New', Courier, monospace;
+
 }
