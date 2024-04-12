@@ -91,12 +91,8 @@ def viet():
     return render_template("viet.html")
 
 @app.route("/thi-phuong")
-def viet():
+def thi_phuong():
     return render_template("thi-phuong.html")
-
-
-
-
 
 
 
