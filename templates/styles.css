@@ -21,18 +21,18 @@
         margin-top: 5px;
         font-size: larger;
         border-radius: 8px;
-        /* background-color: rgb(238, 165, 177); */
+        background-color: rgb(238, 165, 177);
         color: white;
-    
+        border-width: 0px;
     }
     
     #download {
-        height: 35px;
+        height: 45px;
         width: 90%;
         margin-top: 10px;
         /* background-color: transparent; */
         background-color: rgb(238, 196, 89);
-        border: 0px;
+        border-width: 0px;
         border-radius: 8px;
         font-size: 20px;
         color: rgb(84, 85, 84);
@@ -42,13 +42,24 @@
         
     }
     
-    #log-display {
+    .log-display {
         border-width: 2px;
         border-color: black;
         height: 300px;
         width: 90%;
-        background-color: rgb(171, 243, 233);
+        background-color: white;
         border-radius: 8px;
+        margin-bottom: 5px;
+    }
+    
+    ul {
+        list-style-type: none;
+    }
+    
+    #data-list {
+        font-size: 9px;
+        height: 250px;
+        overflow: auto;
     }
 }
 
@@ -72,18 +83,18 @@
     margin-top: 5px;
     font-size: larger;
     border-radius: 8px;
-    /* background-color: rgb(238, 165, 177); */
+    background-color: rgb(238, 165, 177);
     color: white;
-
+    border-width: 0px;
 }
 
 #download {
-    height: 35px;
+    height: 45px;
     width: 90%;
     margin-top: 10px;
     /* background-color: transparent; */
     background-color: rgb(238, 196, 89);
-    border: 0px;
+    border-width: 0px;
     border-radius: 8px;
     font-size: 20px;
     color: rgb(84, 85, 84);
@@ -93,11 +104,22 @@ a#link {
     
 }
 
-#log-display {
+.log-display {
     border-width: 2px;
     border-color: black;
     height: 300px;
     width: 90%;
-    background-color: rgb(171, 243, 233);
+    background-color: white;
     border-radius: 8px;
+    margin-bottom: 5px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+#data-list {
+    font-size: 9px;
+    height: 250px;
+    overflow: auto;
 }

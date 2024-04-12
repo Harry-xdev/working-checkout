@@ -1,33 +1,18 @@
-import webbrowser
-import time
-import datetime
-import psutil
+from flask import Flask, jsonify
+import pandas as pd
 
 
-def open_browser():
-	link = 'https://working-history.onrender.com'
-	delay_time = 3
-	time.sleep(delay_time)
-	webbrowser.open(link)
+def read_csv():
+	data = []
+	df = pd.read_csv('history.csv', encoding='utf-8')
+	data = df.to_dict(orient='records')
+	return data
 
+def get_data():
+     data = read_csv()
+     return jsonify(data)
 
-def close_browser():
-   for proc in psutil.process_iter(['pid', 'name']):
-        if proc.info['name'] in ['chrome.exe', 'firefox.exe', 'msedge.exe']:
-            proc.kill()
-
-def check_time():
-	time.sleep(2)
-	current = datetime.datetime.now()
-	min = current.minute
-	print('current min: ' , min)
-	return min
-
-while True:
-	min = check_time()
-	t = 0
-	if min % 10 == t:
-		print('t: ', t)
-		open_browser()
-		time.sleep(500)
-		close_browser()
+csv = read_csv()
+# data = get_data()
+print(csv)
+# print(data)

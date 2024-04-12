@@ -10,8 +10,9 @@
 	<div class="body-container">
 		<h3 style="font-size: 20px; color: rgb(209, 88, 108); font-family: monospace;">Hello! Tap your name to check out!</h3>
 
-		<div id="log-display">
-			<h6>LOG DISPLAY SCREEN</h6>
+		<div class="log-display">
+			<ul id="data-list">
+			</ul>
 		</div>
 
 		<!-- <button><a style="text-decoration: none" href="https://working-checkout-8e5c8145a6e5.herokuapp.com/download-history-csv">Download CSV</a></button> -->
@@ -80,6 +81,7 @@
 		});
 		handClick(buttonId);
 	};
+
 	function handleDownloadbtn() {
 		window.location.href = "https://working-checkout-8e5c8145a6e5.herokuapp.com/download-history" ;
 		// alert("Excel downloaded.");
@@ -88,13 +90,25 @@
 		btn.disabled = true;
 	};
 
+	const dataListElement = document.getElementById('data-list');
+	fetch('http://127.0.0.1:5500/api/data')
+      .then(response => response.json())
+      .then(data => {
+        // Populate the list with data
+        data.forEach(item => {
+          const liElement = document.createElement('li');
+          liElement.textContent = item.date + ' ' + '[' + item.start_time + ']' + ' - ' + '[' + item.leaving_time + ']' + ': ' + item.staff_name;
+          dataListElement.appendChild(liElement);
+        });
+		console.log(data)
+      })
+      .catch(error => {
+        console.log('Error:', error);
+      });
 
-
-
-
-
-
-
+	const listContainer = document.querySelector('.log-display');
+	const list = document.querySelector('#data-list');
+	listContainer.scrollTop = list.scrollHeight  - listContainer.clientHeight;
 
 
 

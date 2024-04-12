@@ -1,4 +1,5 @@
-from flask import Flask, render_template, request, send_file
+from flask import Flask, render_template, request, send_file, jsonify
+from flask_cors import CORS, cross_origin
 import json
 import os
 import csv
@@ -56,11 +57,17 @@ def get_name_of_weekday():
 	# week_day_name = datetime.datetime.strftime(current_date, '%A')
 	return week_day
 
+def read_csv():
+	data = []
+	df = pd.read_csv('history.csv', encoding='utf-8')
+	data = df.to_dict(orient='records')
+	return data
+
 
 app = Flask(__name__,
 static_url_path = '/static',
 static_folder = 'templates')
-
+CORS(app)
 
 @app.route("/")
 def index():
@@ -70,6 +77,13 @@ def index():
 @app.route("/viet")
 def viet():
      return render_template("viet.html")
+
+
+@app.route("/api/data", methods=['GET'])
+# @cross_origin(allow_origin="http://127.0.0.1:5000")
+def get_data():
+     data = read_csv()
+     return jsonify(data)
 
 
 @app.route("/finished-page")
@@ -125,5 +139,5 @@ def handle_button():
 
 
 if __name__ == "__main__":
-    # app.run(port=5500)
-    app.run()
+    app.run(port=5500)
+    # app.run()
