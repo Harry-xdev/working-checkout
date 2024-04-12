@@ -2,15 +2,15 @@
 @media (max-width: 600px) {
     /* Styles for mobile screens */
     .body-container {
-        /* display: flex;
+        display: flex;
         flex-direction: column;
-         */
+        
         /* background-color: 'black'; */
         width: 100%;
         margin: 0;
-        padding-top: 10px;
-        /* justify-content: center; */
-        /* align-items: center; */
+        padding-top: 0px;
+        justify-content: center;
+        align-items: center;
     
     }
     
@@ -18,26 +18,37 @@
         width: 90%;
         height: 120px;
         margin-top: 0px;
-        padding: 0px;
+        margin-top: 5px;
         font-size: larger;
         border-radius: 8px;
-        background-color: rgb(238, 165, 177);
-        border: 0px;
+        /* background-color: rgb(238, 165, 177); */
+        color: white;
+    
     }
     
     #download {
         height: 35px;
         width: 90%;
-        /* position: fixed; */
-        padding: 0px;
+        margin-top: 10px;
         /* background-color: transparent; */
-        background-color: goldenrod;
+        background-color: rgb(238, 196, 89);
         border: 0px;
         border-radius: 8px;
+        font-size: 20px;
+        color: rgb(84, 85, 84);
     }
     a#link {
         color:honeydew;
         
+    }
+    
+    #log-display {
+        border-width: 2px;
+        border-color: black;
+        height: 300px;
+        width: 90%;
+        background-color: rgb(171, 243, 233);
+        border-radius: 8px;
     }
 }
 
