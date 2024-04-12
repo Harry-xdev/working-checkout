@@ -56,13 +56,13 @@ def get_time():
 def get_time_2():
 	current_time = datetime.datetime.now()
 	hour = current_time.time().hour
-	min = current_time.time().minute
+	minute = current_time.time().minute
 	time = current_time.strftime('%H:%M')
-	if 10 < min and min < 45:
-		min = 30
-	if 45 < min or min < 15:
-		min = 0
-	time_stamp = str(hour) + ':' + str(min)
+	if 10 < minute and minute < 45:
+		minute = 30
+	if 45 < minute or minute < 15:
+		minute = 0
+	time_stamp = str(hour) + ':' + str(minute)
 	return time_stamp
 
 
@@ -205,7 +205,7 @@ def handle_button():
 	button_id = request.json['buttonId']
 	person_name = request.json['content']
 	person_date = get_date()
-	person_time = get_time()
+	person_time = get_time_2()
 
 	def write_staff_data_to_csv():
 		index = None
