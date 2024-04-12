@@ -38,17 +38,19 @@ def get_date():
     print(curr_date)
     return curr_date
 
-
 def get_time():
-    # Specify the desired time zone
-    # Replace with your desired time zone
-    desired_timezone = pytz.timezone("Asia/Ho_Chi_Minh")
-
-    # Get the current time in the desired time zone
-    curr_time = datetime.now(desired_timezone).strftime("%H:%M")
-    print(curr_time)
-
-    return curr_time
+    curr_time = datetime.datetime.now()
+    hour = curr_time.hour
+	minute = curr_time.minute
+	if hour == 16 and (minute < 45 and minute > 10):
+		hour = 16
+		minute = 30
+	elif hour == 19 and (minute < 45 and minute > 10):
+		hour = 19
+		minute = 30
+	time_stamp = str(hour) + ":" + str(minute)
+	# print(time_stamp)
+	return time_stamp
 
 
 def get_name_of_weekday():
