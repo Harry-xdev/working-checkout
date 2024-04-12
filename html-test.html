@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Person Information</title>
+  <style>
+    /* CSS styling for the person information */
+    .person-info {
+      margin: 20px;
+    }
+    .person-info h2 {
+      margin-bottom: 10px;
+    }
+    .person-info p {
+      margin: 5px 0;
+    }
+    .person-info button {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="person-info">
+    <h2 id="name"></h2>
+    <p><strong>Email:</strong> <span id="email"></span></p>
+    <p><strong>Phone:</strong> <span id="phone"></span></p>
+    <button onclick="changePerson()">Change Person</button>
+  </div>
+
+  <script>
+    // Sample person data
+    const peopleData = [
+      {
+        name: "John Doe",
+        email: "johndoe@example.com",
+        phone: "123-456-7890"
+      },
+      {
+        name: "Jane Smith",
+        email: "janesmith@example.com",
+        phone: "987-654-3210"
+      },
+      // Add more person data objects as needed
+    ];
+
+    // Initialize with the first person data
+    let currentPersonIndex = 0;
+    displayPerson();
+
+    // Function to display the current person's information
+    function displayPerson() {
+      const currentPerson = peopleData[currentPersonIndex];
+      document.getElementById("name").textContent = currentPerson.name;
+      document.getElementById("email").textContent = currentPerson.email;
+      document.getElementById("phone").textContent = currentPerson.phone;
+    }
+
+    // Function to switch to the next person data
+    function changePerson() {
+      currentPersonIndex = (currentPersonIndex + 1) % peopleData.length;
+      displayPerson();
+    }
+  </script>
+</body>
+</html>
