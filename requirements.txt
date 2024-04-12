@@ -3,3 +3,4 @@ gunicorn==21.2.0
 pytz
 pandas
 openpyxl
+flask_cors
