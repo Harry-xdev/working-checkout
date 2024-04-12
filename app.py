@@ -94,7 +94,53 @@ def viet():
 def thi_phuong():
     return render_template("thi-phuong.html")
 
+@app.route("/yen")
+def yen():
+    return render_template("yen.html")
 
+@app.route("/phuc")
+def phuc():
+    return render_template("phuc.html")
+
+@app.route("/minh")
+def minh():
+    return render_template("minh.html")
+
+@app.route("/qui")
+def qui():
+    return render_template("qui.html")
+
+@app.route("/my")
+def my():
+    return render_template("my.html")
+
+@app.route("/thang")
+def thang():
+    return render_template("thang.html")
+
+@app.route("/trung")
+def trung():
+    return render_template("trung.html")
+
+@app.route("/anh")
+def anh():
+    return render_template("anh.html")
+
+@app.route("/luu")
+def luu():
+    return render_template("luu.html")
+
+@app.route("/khoa")
+def khoa():
+    return render_template("khoa.html")
+
+@app.route("/mai-phuong")
+def mai_phuong():
+    return render_template("mai-phuong.html")
+
+@app.route("/tuyet")
+def tuyet():
+    return render_template("tuyet.html")
 
 @app.route("/api/data", methods=['GET'])
 # @cross_origin(allow_origin="http://127.0.0.1:5000")
