@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>New page</title>
 	<!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}"> -->
 	<link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 	<div class="body-container">
-		<h3 style="font-size: 20px; color: rgb(209, 88, 108); font-family: monospace;">Hello! Tap your name to check out!</h3>
+		<h3 style="font-size: 20px; color: rgb(209, 88, 108); font-family: monospace;">Hello! Tap your name to check
+			out!</h3>
 
 		<div class="log-display">
 			<ul id="data-list">
@@ -35,7 +38,7 @@
 		<button id="btn_16" class="btn" onclick="sendName('btn_16')">LÊ HUỲNH ANH KHOA</button><br>
 		<button id="btn_17" class="btn" onclick="sendName('btn_17')">NGUYỄN MAI PHƯƠNG</button><br>
 		<button id="btn_18" class="btn" onclick="sendName('btn_18')">NGUYỄN PHẠM NGỌC TUYẾT</button><br> -->
-		
+
 		<button id="download" onclick="handleDownloadbtn()">Download Excel Report</button>
 		<button id="btn_6" class="btn" onclick="sendName('btn_6')">
 			<p style="color: grey; font-size: 14px;">OT tap here!</p>
@@ -47,6 +50,7 @@
 
 
 </body>
+
 </html>
 
 <script>
@@ -69,8 +73,8 @@
 		console.log(buttonId);
 		const content = button.innerHTML;
 		const payload = {
-			buttonId : buttonId,
-			content : content,
+			buttonId: buttonId,
+			content: content,
 		};
 		fetch('/button', {
 			method: 'POST',
@@ -86,10 +90,11 @@
 			}
 		});
 		handClick(buttonId);
+		updateList();
 	};
 
 	function handleDownloadbtn() {
-		window.location.href = "https://working-checkout-8e5c8145a6e5.herokuapp.com/download-history" ;
+		window.location.href = "https://working-checkout-8e5c8145a6e5.herokuapp.com/download-history";
 		// alert("Excel downloaded.");
 		btn = document.getElementById('download');
 		btn.style.backgroundColor = 'grey';
@@ -98,21 +103,37 @@
 
 	const dataListElement = document.getElementById('data-list');
 	fetch('http://127.0.0.1:5000/api/data')
-      .then(response => response.json())
-      .then(data => {
-        // Populate the list with data
-        data.forEach(item => {
-          const liElement = document.createElement('li');
-          liElement.textContent = item.date + ' | ' + '[' + item.start_time + ']' + '-' + '[' + item.leaving_time + ']' + ': ' + item.staff_name;
-          dataListElement.appendChild(liElement);
-        });
-		console.log(data)
-      })
-      .catch(error => {
-        console.log('Error:', error);
-      });
+		.then(response => response.json())
+		.then(data => {
+			// Populate the list with data
+			data.forEach(item => {
+				const liElement = document.createElement('li');
+				liElement.textContent = item.date + ' | ' + '[' + item.start_time + ']' + '-' + '[' + item.leaving_time + ']' + ': ' + item.staff_name;
+				dataListElement.appendChild(liElement);
+			});
+			console.log(data)
+		})
+		.catch(error => {
+			console.log('Error:', error);
+		});
+		
+	function updateList() {
+		fetch('http://127.0.0.1:5000/api/data')
+			.then(response => response.json())
+			.then(data => {
+				// Populate the list with data
+				data.forEach(item => {
+					const liElement = document.createElement('li');
+					liElement.textContent = item.date + ' | ' + '[' + item.start_time + ']' + '-' + '[' + item.leaving_time + ']' + ': ' + item.staff_name;
+					dataListElement.appendChild(liElement);
+				});
+				console.log(data)
+			})
+			.catch(error => {
+				console.log('Error:', error);
+			});
+	}
 
-	
 
 
 </script>

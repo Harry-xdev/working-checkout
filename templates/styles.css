@@ -1,19 +1,19 @@
-
 @media (max-width: 600px) {
+
     /* Styles for mobile screens */
     .body-container {
         display: flex;
         flex-direction: column;
-        
+
         /* background-color: 'black'; */
         width: 100%;
         margin: 0;
         padding-top: 0px;
         justify-content: center;
         align-items: center;
-    
+
     }
-    
+
     .btn {
         width: 90%;
         height: 120px;
@@ -25,7 +25,7 @@
         color: white;
         border-width: 0px;
     }
-    
+
     #download {
         height: 45px;
         width: 90%;
@@ -37,11 +37,12 @@
         font-size: 20px;
         color: rgb(84, 85, 84);
     }
+
     a#link {
-        color:honeydew;
-        
+        color: honeydew;
+
     }
-    
+
     .log-display {
         border-width: 2px;
         border-color: black;
@@ -52,19 +53,19 @@
         border-radius: 8px;
         margin-bottom: 5px;
     }
-    
+
     ul {
         list-style-type: none;
     }
-    
+
     #data-list {
         font-size: 9px;
         height: 286px;
         overflow: auto;
         font-weight: bold;
         /* font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
-        font-family:'Courier New', Courier, monospace;
-    
+        font-family: 'Courier New', Courier, monospace;
+
     }
 }
 
@@ -74,7 +75,7 @@
 .body-container {
     display: flex;
     flex-direction: column;
-    
+
     /* background-color: 'black'; */
     width: 100%;
     margin: 0;
@@ -107,9 +108,10 @@
     font-size: 20px;
     color: rgb(84, 85, 84);
 }
+
 a#link {
-    color:honeydew;
-    
+    color: honeydew;
+
 }
 
 .log-display {
@@ -133,6 +135,6 @@ ul {
     overflow: auto;
     font-weight: bold;
     /* font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
-    font-family:'Courier New', Courier, monospace;
+    font-family: 'Courier New', Courier, monospace;
 
 }

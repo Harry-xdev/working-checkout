@@ -42,7 +42,7 @@
 		<button id="download" onclick="handleDownloadbtn()">Download Excel Report</button>
 		<button id="btn_6" class="btn" onclick="sendName('btn_6')">
 			<p style="color: grey; font-size: 14px;">OT tap here!</p>
-			NGUYỄN HOÀNG VIỆT
+			PHẠM THỊ PHƯƠNG
 		</button>
 
 	</div>
@@ -102,7 +102,7 @@
 	};
 
 	const dataListElement = document.getElementById('data-list');
-	fetch('http://127.0.0.1:5000/api/data')
+	fetch('https://working-checkout-8e5c8145a6e5.herokuapp.com/api/data')
 		.then(response => response.json())
 		.then(data => {
 			// Populate the list with data
@@ -118,7 +118,7 @@
 		});
 		
 	function updateList() {
-		fetch('http://127.0.0.1:5000/api/data')
+		fetch('https://working-checkout-8e5c8145a6e5.herokuapp.com/api/data')
 			.then(response => response.json())
 			.then(data => {
 				// Populate the list with data
