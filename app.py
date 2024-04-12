@@ -205,7 +205,7 @@ def handle_button():
 	button_id = request.json['buttonId']
 	person_name = request.json['content']
 	person_date = get_date()
-	person_time = get_time_2()
+	person_time = get_time()
 
 	def write_staff_data_to_csv():
 		index = None
