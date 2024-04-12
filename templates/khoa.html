@@ -118,17 +118,16 @@
 		});
 		
 	function updateList() {
-		// Populate the list with data
+	// Populate the list with data
 		const listContainer = document.getElementById('data-list');
 		listContainer.innerHTML = '';
 		const dataListElement = document.getElementById('data-list');
 		globalData.forEach(item => {
 			const liElement = document.createElement('li');
 			liElement.textContent = item.date + ' | ' + '[' + item.start_time + ']' + '-' + '[' + item.leaving_time + ']' + ': ' + item.staff_name;
-	};
-
+			dataListElement.appendChild(liElement);
+			});
 	}
-
 
 
 </script>
