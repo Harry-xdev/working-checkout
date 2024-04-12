@@ -22,27 +22,27 @@
 
 		<!-- <button id="btn_1" class="btn" onclick="sendName('btn_1')">LÊ PHƯƠNG</button><br>
 		<button id="btn_2" class="btn" onclick="sendName('btn_2')">TRƯƠNG TƯ XUÂN</button><br>
-		<button id="btn_3" class="btn" onclick="sendName('btn_3')">TRƯƠNG THÀNH TAM</button><br>
-		<button id="btn_4" class="btn" onclick="sendName('btn_4')">LÊ THANH TUẤN</button><br>
-		<button id="btn_5" class="btn" onclick="sendName('btn_5')">PHẠM THỊ PHƯƠNG</button><br>
-		<button id="btn_6" class="btn" onclick="sendName('btn_6')">NGUYỄN HOÀNG VIỆT</button><br>
-		<button id="btn_7" class="btn" onclick="sendName('btn_7')">NGUYỄN THỊ HỒNG YẾN</button><br>
-		<button id="btn_8" class="btn" onclick="sendName('btn_8')">BÙI HỒNG PHÚC</button><br>
+		<button id="btn_3" class="btn" onclick="sendName('btn_3')">TRƯƠNG THÀNH TAM</button><br>
+		<button id="btn_4" class="btn" onclick="sendName('btn_4')">LÊ THANH TUẤN</button><br>
+		<button id="btn_5" class="btn" onclick="sendName('btn_5')">PHẠM THỊ PHƯƠNG</button><br>
+		<button id="btn_6" class="btn" onclick="sendName('btn_6')">NGUYỄN HOÀNG VIỆT</button><br>
+		<button id="btn_7" class="btn" onclick="sendName('btn_7')">NGUYỄN THỊ HỒNG YẾN</button><br>
+		<button id="btn_8" class="btn" onclick="sendName('btn_8')">BÙI HỒNG PHÚC</button><br>
 		<button id="btn_9" class="btn" onclick="sendName('btn_9')">TRƯƠNG VĂN MINH</button><br>
-		<button id="btn_10" class="btn" onclick="sendName('btn_10')">NGUYỄN QUANG QUÍ</button><br>
-		<button id="btn_11" class="btn" onclick="sendName('btn_11')">NGUYỄN THỊ DIỄM MY</button><br>
-		<button id="btn_12" class="btn" onclick="sendName('btn_12')">LÊ MINH THẮNG</button><br>
-		<button id="btn_13" class="btn" onclick="sendName('btn_13')">LÊ QUỐC TRUNG</button><br>
-		<button id="btn_14" class="btn" onclick="sendName('btn_14')">NGUYỄN TUẤN ANH</button><br>
-		<button id="btn_15" class="btn" onclick="sendName('btn_15')">TRẦN VĂN LƯU</button><br>
-		<button id="btn_16" class="btn" onclick="sendName('btn_16')">LÊ HUỲNH ANH KHOA</button><br>
-		<button id="btn_17" class="btn" onclick="sendName('btn_17')">NGUYỄN MAI PHƯƠNG</button><br>
-		<button id="btn_18" class="btn" onclick="sendName('btn_18')">NGUYỄN PHẠM NGỌC TUYẾT</button><br> -->
+		<button id="btn_10" class="btn" onclick="sendName('btn_10')">NGUYỄN QUANG QUÍ</button><br>
+		<button id="btn_11" class="btn" onclick="sendName('btn_11')">NGUYỄN THỊ DIỄM MY</button><br>
+		<button id="btn_12" class="btn" onclick="sendName('btn_12')">LÊ MINH THẮNG</button><br>
+		<button id="btn_13" class="btn" onclick="sendName('btn_13')">LÊ QUỐC TRUNG</button><br>
+		<button id="btn_14" class="btn" onclick="sendName('btn_14')">NGUYỄN TUẤN ANH</button><br>
+		<button id="btn_15" class="btn" onclick="sendName('btn_15')">TRẦN VĂN LƯU</button><br>
+		<button id="btn_16" class="btn" onclick="sendName('btn_16')">LÊ HUỲNH ANH KHOA</button><br>
+		<button id="btn_17" class="btn" onclick="sendName('btn_17')">NGUYỄN MAI PHƯƠNG</button><br>
+		<button id="btn_18" class="btn" onclick="sendName('btn_18')">NGUYỄN PHẠM NGỌC TUYẾT</button><br> -->
 
 		<button id="download" onclick="handleDownloadbtn()">Download Excel Report</button>
 		<button id="btn_14" class="btn" onclick="sendName('btn_14')">
 			<p style="color: grey; font-size: 14px;">OT tap here!</p>
-			NGUYỄN TUẤN ANH
+			NGUYỄN TUẤN ANH
 		</button>
 
 	</div>
@@ -54,6 +54,11 @@
 </html>
 
 <script>
+
+	const globalData
+	const staffs_lst_2 = [{0: 'btn_1', 1: 'LÊ PHƯƠNG', 2: '070032', 3: 'TEST REQUEST', 4: 'RD'}, {0: 'btn_2', 1: 'TRƯƠNG TƯ XUÂN', 2: '080262', 3: 'TEST REQUEST', 4: 'RD'}, {0: 'btn_3', 1: 'TRƯƠNG THÀNH TAM', 2: '080427', 3: 'B/T', 4: 'RD'}, {0: 'btn_4', 1: 'LÊ THANH TUẤN', 2: '101339', 3: 'TEST REQUEST', 4: 'RD'}, {0: 'btn_5', 1: 'PHẠM THỊ PHƯƠNG', 2: '172684', 3: 'TEST REQUEST', 4: 'RD'}, {0: 'btn_6', 1: 'NGUYỄN HOÀNG VIỆT', 2: '172759', 3: 'TEST REQUEST', 4: 'RD'}, {0: 'btn_7', 1: 'NGUYỄN THỊ HỒNG YẾN', 2: '172824', 3: 'TEST REQUEST', 4: 'RD'}, {0: 'btn_8', 1: 'BÙI ĐÌNH HỒNG PHÚC', 2: '193273', 3: 'TEST REQUEST', 4: 'RD'}, {0: 'btn_9', 1: 'TRƯƠNG VĂN MINH', 2: '203591', 3: 'TEST REQUEST', 4: 'RD'}, {0: 'btn_10', 1: 'NGUYỄN QUANG QUÍ', 2: '203638', 3: 'TEST REQUEST', 4: 'RD'}, {0: 'btn_11', 1: 'NGUYỄN THỊ DIỄM MY', 2: '213714', 3: 'TEST REQUEST', 4: 'RD'}, {0: 'btn_12', 1: 'LÊ MINH THẮNG', 2: '223906', 3: 'TEST REQUEST', 4: 'RD'}, {0: 'btn_13', 1: 'LÊ QUỐC TRUNG', 2: '224016', 3: 'B/T', 4: 'RD'}, {0: 'btn_14', 1: 'NGUYỄN TUẤN ANH', 2: '224057', 3: 'TEST REQUEST', 4: 'RD'}, {0: 'btn_15', 1: 'TRẦN VĂN LƯU', 2: '234102', 3: 'TEST REQUEST', 4: 'RD'}, {0: 'btn_16', 1: 'LÊ HUỲNH ANH KHOA', 2: '234168', 3: 'B/T', 4: 'RD'}, {0: 'btn_17', 1: 'NGUYỄN MAI PHƯƠNG', 2: '234170', 3: 'TEST REQUEST', 4: 'RD'}, {0: 'btn_18', 1: 'PHẠM NG NGỌC TUYẾT', 2: '234172', 3: 'TEST REQUEST', 4: 'RD'}]
+	
+	
 	const testLink = 'http://127.0.0.1:5000'
 	const productionLink = 'https://working-checkout-8e5c8145a6e5.herokuapp.com'
 
@@ -65,7 +70,7 @@
 		buttonDiv.style.backgroundColor = 'gray';
 		buttonDiv.disabled = true;
 		// alert("Check-in(out) successful.");
-
+		globalData.unshift(staffs_lst_2[14])
 	};
 
 	function sendName(buttonId) {
@@ -118,25 +123,16 @@
 		});
 		
 	function updateList() {
-		fetch('https://working-checkout-8e5c8145a6e5.herokuapp.com/api/data')
-			.then(response => response.json())
-			.then(data => {
-				// Populate the list with data
-				const listContainer = document.getElementById('data-list');
-				listContainer.innerHTML = '';
-				data.forEach(item => {
-					const li = document.createElement('li');
-					li.textContent = item.date + ' | ' + '[' + item.start_time + ']' + '-' + '[' + item.leaving_time + ']' + ': ' + item.staff_name;
-					listContainer.appendChild(li);
-      			});
+		// Populate the list with data
+		const listContainer = document.getElementById('data-list');
+		listContainer.innerHTML = '';
+		const dataListElement = document.getElementById('data-list');
+		globalData.forEach(item => {
+			const liElement = document.createElement('li');
+			liElement.textContent = item.date + ' | ' + '[' + item.start_time + ']' + '-' + '[' + item.leaving_time + ']' + ': ' + item.staff_name;
+	};
 
-				console.log(data)
-			})
-			.catch(error => {
-				console.log('Error:', error);
-			});
-	}
-
+	
 
 
 </script>
