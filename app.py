@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request, send_file, jsonify
 from flask_cors import CORS, cross_origin
 import json
-import os
 import csv
 from datetime import date
 from datetime import datetime
