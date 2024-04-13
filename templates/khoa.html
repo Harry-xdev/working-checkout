@@ -22,22 +22,22 @@
 
 		<!-- <button id="btn_1" class="btn" onclick="sendName('btn_1')">LÊ PHƯƠNG</button><br>
 		<button id="btn_2" class="btn" onclick="sendName('btn_2')">TRƯƠNG TƯ XUÂN</button><br>
-		<button id="btn_3" class="btn" onclick="sendName('btn_3')">TRƯƠNG THÀNH TAM</button><br>
-		<button id="btn_4" class="btn" onclick="sendName('btn_4')">LÊ THANH TUẤN</button><br>
-		<button id="btn_5" class="btn" onclick="sendName('btn_5')">PHẠM THỊ PHƯƠNG</button><br>
-		<button id="btn_6" class="btn" onclick="sendName('btn_6')">NGUYỄN HOÀNG VIỆT</button><br>
-		<button id="btn_7" class="btn" onclick="sendName('btn_7')">NGUYỄN THỊ HỒNG YẾN</button><br>
-		<button id="btn_8" class="btn" onclick="sendName('btn_8')">BÙI HỒNG PHÚC</button><br>
+		<button id="btn_3" class="btn" onclick="sendName('btn_3')">TRƯƠNG THÀNH TAM</button><br>
+		<button id="btn_4" class="btn" onclick="sendName('btn_4')">LÊ THANH TUẤN</button><br>
+		<button id="btn_5" class="btn" onclick="sendName('btn_5')">PHẠM THỊ PHƯƠNG</button><br>
+		<button id="btn_6" class="btn" onclick="sendName('btn_6')">NGUYỄN HOÀNG VIỆT</button><br>
+		<button id="btn_7" class="btn" onclick="sendName('btn_7')">NGUYỄN THỊ HỒNG YẾN</button><br>
+		<button id="btn_8" class="btn" onclick="sendName('btn_8')">BÙI HỒNG PHÚC</button><br>
 		<button id="btn_9" class="btn" onclick="sendName('btn_9')">TRƯƠNG VĂN MINH</button><br>
-		<button id="btn_10" class="btn" onclick="sendName('btn_10')">NGUYỄN QUANG QUÍ</button><br>
-		<button id="btn_11" class="btn" onclick="sendName('btn_11')">NGUYỄN THỊ DIỄM MY</button><br>
-		<button id="btn_12" class="btn" onclick="sendName('btn_12')">LÊ MINH THẮNG</button><br>
-		<button id="btn_13" class="btn" onclick="sendName('btn_13')">LÊ QUỐC TRUNG</button><br>
-		<button id="btn_14" class="btn" onclick="sendName('btn_14')">NGUYỄN TUẤN ANH</button><br>
-		<button id="btn_15" class="btn" onclick="sendName('btn_15')">TRẦN VĂN LƯU</button><br>
-		<button id="btn_16" class="btn" onclick="sendName('btn_16')">LÊ HUỲNH ANH KHOA</button><br>
-		<button id="btn_17" class="btn" onclick="sendName('btn_17')">NGUYỄN MAI PHƯƠNG</button><br>
-		<button id="btn_18" class="btn" onclick="sendName('btn_18')">NGUYỄN PHẠM NGỌC TUYẾT</button><br> -->
+		<button id="btn_10" class="btn" onclick="sendName('btn_10')">NGUYỄN QUANG QUÍ</button><br>
+		<button id="btn_11" class="btn" onclick="sendName('btn_11')">NGUYỄN THỊ DIỄM MY</button><br>
+		<button id="btn_12" class="btn" onclick="sendName('btn_12')">LÊ MINH THẮNG</button><br>
+		<button id="btn_13" class="btn" onclick="sendName('btn_13')">LÊ QUỐC TRUNG</button><br>
+		<button id="btn_14" class="btn" onclick="sendName('btn_14')">NGUYỄN TUẤN ANH</button><br>
+		<button id="btn_15" class="btn" onclick="sendName('btn_15')">TRẦN VĂN LƯU</button><br>
+		<button id="btn_16" class="btn" onclick="sendName('btn_16')">LÊ HUỲNH ANH KHOA</button><br>
+		<button id="btn_17" class="btn" onclick="sendName('btn_17')">NGUYỄN MAI PHƯƠNG</button><br>
+		<button id="btn_18" class="btn" onclick="sendName('btn_18')">NGUYỄN PHẠM NGỌC TUYẾT</button><br> -->
 
 		<button id="download" onclick="handleDownloadbtn()">Download Excel Report</button>
 		<button id="btn_16" class="btn" onclick="sendName('btn_16')">
@@ -118,16 +118,25 @@
 		});
 		
 	function updateList() {
-	// Populate the list with data
-		const listContainer = document.getElementById('data-list');
-		listContainer.innerHTML = '';
-		const dataListElement = document.getElementById('data-list');
-		globalData.forEach(item => {
-			const liElement = document.createElement('li');
-			liElement.textContent = item.date + ' | ' + '[' + item.start_time + ']' + '-' + '[' + item.leaving_time + ']' + ': ' + item.staff_name;
-			dataListElement.appendChild(liElement);
+		fetch('https://working-checkout-8e5c8145a6e5.herokuapp.com/api/data')
+			.then(response => response.json())
+			.then(data => {
+				// Populate the list with data
+				const listContainer = document.getElementById('data-list');
+				listContainer.innerHTML = '';
+				data.forEach(item => {
+					const li = document.createElement('li');
+					li.textContent = item.date + ' | ' + '[' + item.start_time + ']' + '-' + '[' + item.leaving_time + ']' + ': ' + item.staff_name;
+					listContainer.appendChild(li);
+      			});
+
+				console.log(data)
+			})
+			.catch(error => {
+				console.log('Error:', error);
 			});
 	}
+
 
 
 </script>
