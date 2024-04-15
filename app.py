@@ -3,7 +3,7 @@ from flask_cors import CORS, cross_origin
 import json
 import csv
 from datetime import date
-from datetime import datetime
+import datetime
 import pytz
 import pandas as pd
 
@@ -204,7 +204,7 @@ def handle_button():
 	button_id = request.json['buttonId']
 	person_name = request.json['content']
 	person_date = get_date()
-	person_time = get_time()
+	person_time = get_time_2()
 
 	def write_staff_data_to_csv():
 		index = None
