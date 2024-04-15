@@ -55,7 +55,7 @@ def get_time():
 def get_time_2():
 	desired_timezone = pytz.timezone("Asia/Ho_Chi_Minh")
 	# curr_time = datetime.now(desired_timezone).strftime("%H:%M")
-	current_time = datetime.now(desired_timezone)
+	current_time = datetime.datetime.now(desired_timezone)
 	hour = current_time.time().hour
 	minute = current_time.time().minute
 	time = current_time.strftime('%H:%M')
